@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+    stages {
+        
+		
+		stage('Testing the code') {
+            steps {
+                echo 'Testing the code'
+				sh 'mvn test'
+            }
+        }
+		
+    }
+    post { 
+        always { 
+            echo 'Sending email over gmail'
+        }
+    }
+}
